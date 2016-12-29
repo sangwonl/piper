@@ -103,7 +103,7 @@ func (w *Worker) work(job Job) {
 		if w.cb != nil {
 			w.cb(w, job, r)
 		}
-		if r != nil && w.next != nil {
+		if w.next != nil {
 			w.next.Queue(r)
 		}
 		w.wgJob.Done()
