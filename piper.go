@@ -79,6 +79,10 @@ func (w *Worker) Wait() {
 	w.wgWorker.Wait()
 }
 
+func (w *Worker) Next() *Worker {
+	return w.next
+}
+
 func (w *Worker) Queue(job Job) {
 	w.qMsg(0, job)
 }
