@@ -7,7 +7,7 @@ In job/worker perspective, you might need series of workers chained. For example
 ## Example
 ```
 func seriesJobs() {
-	w1 := piper.NewWorker(1, func(w *piper.Worker, job piper.Job) piper.Result {
+	worker1 := piper.NewWorker(1, func(w *piper.Worker, job piper.Job) piper.Result {
 		sum := 0
 		numList := job.([]int)
 		for _, v := range numList {
@@ -16,7 +16,7 @@ func seriesJobs() {
 		return sum
 	})
 
-	w2 := piper.NewWorker(1, func(w *piper.Worker, job piper.Job) piper.Result {
+	worker2 := piper.NewWorker(1, func(w *piper.Worker, job piper.Job) piper.Result {
 		sum := job.(int)
 		return float32(sum) / 10
 	})
