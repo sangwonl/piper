@@ -5,12 +5,12 @@ is Go Chained Worker
 In job/worker perspective, you might need series of workers chained. For example, assume that too many of jobs should be processed by fanout and in order accross many workers(`goroutines`), so it should be able to pass the results of over some results of a worker into another next worker and then do so... `Piper` provides chaining worker in simple way.
 
 ## Get
-```
-go get github.com/sangwonl/piper
+```bash
+$ go get github.com/sangwonl/piper
 ```
 
 ## Example
-```
+```go
 import "github.com/sangwonl/piper"
 
 func seriesJobs() {
